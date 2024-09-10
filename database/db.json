@@ -1,0 +1,18 @@
+{
+    "metas": [
+        {
+            "name": "Tentar novas metas",
+            "propriedades": {
+                "dataFim": "2024-09-10",
+                "dataInicio": "2024-09-09",
+                "status": "conclu\u00edda",
+                "conclusao": "2024-09-09",
+                "prioridade": "m\u00e9dia",
+                "tags": [
+                    "rotina",
+                    "tentando"
+                ]
+            }
+        }
+    ]
+}
