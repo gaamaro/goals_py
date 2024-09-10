@@ -1,14 +1,20 @@
+import os
 import json
 from datetime import datetime
 from InquirerPy import prompt
 
+def clear_terminal():
+    os.system('cls' if os.name == 'nt' else 'clear')
+
 def concluir():
+    clear_terminal()
     with open('database/db.json', 'r+') as file:
         data = json.load(file)
         metas = data.get('metas', [])
 
         if not metas:
             print("\nNenhuma meta cadastrada.\n")
+            input("\nPressione Enter para voltar ao menu principal...")
             return
 
         choices = [{"name": f"{meta['name']} - {meta['propriedades']['dataFim']} - {meta['propriedades']['prioridade']}", "value": index} for index, meta in enumerate(metas)]
@@ -20,6 +26,7 @@ def concluir():
 
         if not metas_selecionadas:
             print("\nNenhuma meta selecionada.\n")
+            input("\nPressione Enter para voltar ao menu principal...")
             return
 
         confirmacao = prompt([
@@ -37,6 +44,10 @@ def concluir():
             json.dump(data, file, indent=4)
             file.truncate()
 
+            clear_terminal()
             print("\nMetas concluídas com sucesso!\n")
         else:
+            clear_terminal()
             print("\nOperação cancelada.\n")
+
+        input("\nPressione Enter para voltar ao menu principal...")

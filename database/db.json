@@ -13,6 +13,20 @@
                     "tentando"
                 ]
             }
+        },
+        {
+            "name": "Nova meta",
+            "propriedades": {
+                "dataFim": "2024-08-19",
+                "dataInicio": "2024-09-09",
+                "status": "aberta",
+                "conclusao": "",
+                "prioridade": "m\u00e9dia",
+                "tags": [
+                    "asdasd",
+                    "asdasd"
+                ]
+            }
         }
     ]
 }

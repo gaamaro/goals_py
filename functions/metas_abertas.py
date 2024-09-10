@@ -1,7 +1,12 @@
+import os
 import json
 from tabulate import tabulate
 
+def clear_terminal():
+    os.system('cls' if os.name == 'nt' else 'clear')
+
 def metas_abertas():
+    clear_terminal()
     with open('database/db.json', 'r') as file:
         data = json.load(file)
         metas = data.get('metas', [])
@@ -10,6 +15,7 @@ def metas_abertas():
 
         if not metas_abertas:
             print("\nNenhuma meta aberta.\n")
+            input("\nPressione Enter para voltar ao menu principal...")
             return
 
         tabela = [[
@@ -23,3 +29,4 @@ def metas_abertas():
         ] for meta in metas_abertas]
 
         print("\n" + tabulate(tabela, headers=["Finalizada", "Nome", "Data Início", "Data Fim", "Conclusão", "Prioridade", "Tags"]) + "\n")
+        input("\nPressione Enter para voltar ao menu principal...")

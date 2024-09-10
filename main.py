@@ -5,9 +5,13 @@ from functions import cadastrar, deletar, listar, metas_abertas, metas_realizada
 
 app = typer.Typer()
 
+def clear_terminal():
+    os.system('cls' if os.name == 'nt' else 'clear')
+
 def main():
     try:
         while True:
+            clear_terminal()
             menu = [
                 {
                     "type": "list",
